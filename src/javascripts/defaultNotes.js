@@ -6,16 +6,16 @@ const defaultNotes = [
       mainText: 'It will probably be stuck in "work in progress" stage indefinetely',
       color: '#E2FF0A',
       fontColor: '#000000',
-      folder: null
+      folder: 'default'
     },
     {
       id: 2,
       date: new Date(2022, 4, 12).getTime(),
       heading: 'To create a new note',
-      mainText: 'Press the large "+" button in the corner',
+      mainText: 'Press the large "+" button in the bottom-right corner',
       color: '#333333',
       fontColor: '#FFFFFF',
-      folder: null
+      folder: 'default'
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ const defaultNotes = [
       mainText: 'Click on a note itself, and click on a gear icon to access settings',
       color: '#23AA5E',
       fontColor: '#000000',
-      folder: null
+      folder: 'default'
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const defaultNotes = [
       mainText: 'Use sidebar menu to create folders and filter notes, change note folders through note settings',
       color: '#23AA5E',
       fontColor: '#000000',
-      folder: null
+      folder: 'default'
     },
     {
       id: 5,
@@ -42,7 +42,7 @@ const defaultNotes = [
       mainText: 'You still haven\'t finished this, huh',
       color: '#23DE47',
       fontColor: '#000000',
-      folder: null
+      folder: 'default'
     }
   ];
 
