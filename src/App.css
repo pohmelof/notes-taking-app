@@ -1,0 +1,76 @@
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media screen and  (max-width: 500px) {
+  .notes-container {
+    grid-template-columns: 1fr;
+  }
+}
+.btn {
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  filter: invert(1);
+}
+.btn:active {
+  transform: scale(0.9);
+}
+.blur {
+  filter: blur(5px);
+}
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.edit-note-anim {
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+.edit-active {
+  transform: translateY(0);
+}
+.new-note-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 5rem;
+  border: none;
+  background-color: gray;
+  color: var(--font-main-light);
+  box-shadow: 5px 5px 20px 5px black;
+}
+.new-note-btn:hover {
+  background-color: darkgray;
+}
+.new-note-btn:active {
+  background-color: black;
+}
+.sidebar-clickable-overlay {
+  background-color: transparent;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+

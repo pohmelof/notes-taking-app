@@ -1,0 +1,59 @@
+.note-edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    transform-origin: bottom;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all 0.4s;
+    animation-iteration-count: 1;
+    animation-name: noteEditRollout;
+    animation-duration: 0.21s;
+}
+.reverse-animation {
+    animation-iteration-count: 1;
+    animation-name: noteEditRollIn;
+    animation-duration: 0.21s;
+}
+.note-edit-active {
+    transform: scaleY(1);
+}
+.note-edit-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.note-edit-text,
+.note-edit-heading {
+    max-width: 500px;
+    width: 100%;
+    resize: none;
+    padding: 20px;
+    color: var(--font-main-dark);
+}
+.note-edit-heading {
+    font-size: 1.5rem;
+}
+.note-edit-text {
+    min-height: 50vh;
+}
+
+@keyframes noteEditRollout {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+@keyframes noteEditRollIn {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}

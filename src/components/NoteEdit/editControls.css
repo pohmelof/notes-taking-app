@@ -1,0 +1,93 @@
+.note-edit-controls {
+    background-color: rgba(56, 54, 54, 0.7);
+    border-top: 2px solid var(--font-main-dark);
+    border-bottom: 2px solid var(--font-main-dark);
+    color: var(--font-main-light);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    justify-content: space-between;
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: all 0.1s;
+}
+.controls-open {
+    transform: scaleY(1);
+}
+.btn-toggle-controls {
+    justify-self: flex-end;
+    border: none;
+    color: var(--font-main-dark);
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.507),
+                -2px -2px 5px rgba(255, 255, 255, 0.507),
+                2px -2px 5px rgba(255, 255, 255, 0.507),
+                -2px 2px 5px rgba(255, 255, 255, 0.507);
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 3rem;
+}
+.controls-cell {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 5px;
+}
+.color-picker {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+}
+.folder-select {
+    min-width: 120px;
+    height: 40px;
+}
+.edit-toggle {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.folder-none {
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.btn-controls {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 40px;
+}
+.btn-controls:hover,
+.btn-controls:focus {
+    filter: drop-shadow(0 0 3px);
+}
+.btn-controls:active {
+    transform: scale(0.9);
+}
+.controls-save {
+    background-color: var(--bg-agree);
+    color: var(--font-main-light);
+}
+.controls-delete {
+    background-color: var(--bg-danger);
+    color: var(--font-main-light);
+}

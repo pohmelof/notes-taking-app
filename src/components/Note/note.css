@@ -1,0 +1,44 @@
+.note {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    box-shadow: 5px 5px 25px 5px var(--shadow-color);
+    position: relative;
+    min-width: 200px;
+    min-height: 100px;
+    /* max-width:  400px; */
+}
+.note-date {
+    background-color: var(--bg-main-light);
+    position: absolute;
+    user-select: none;
+    top: -5px;
+    right: -5px;
+    padding: 0 10px;
+    font-weight: bold;
+    box-shadow: 1px 1px 15px 1px var(--shadow-color);
+    color: var(--font-main-dark);
+    transform: rotate(3deg);
+}
+.note-edit-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+.note-heading {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    overflow: auto;
+}
+.note-main {
+    min-height: 100px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    overflow: auto;
+}

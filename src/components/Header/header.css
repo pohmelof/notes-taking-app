@@ -1,0 +1,22 @@
+.header {
+    background-color: var(--bg-accent);
+    border-bottom: 2px solid;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.699);
+}
+.open-sidebar {
+    font-size: 2rem;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+}
+.header-logo {
+    margin: 0;
+    color: var(--font-main-light);
+    padding-right: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 0 var(--shadow-color);
+}
