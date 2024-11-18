@@ -74,10 +74,12 @@ const EditControls = ({note, folders, closeEditWindow, handleChange}) => {
                     <span>Delete:</span>
                     <button
                         className='btn-controls controls-delete'
-                        onClick={async (e) => {
+                        onClick={(e) => {
                             e.preventDefault();
-                            const deleteNote = confirm('Are you sure you want to delete this note');
-                            if (deleteNote) {
+                            const confirmDelete = confirm('Are you sure you want to delete this note');
+                            
+                            if (confirmDelete) {
+                                
                                 closeEditWindow(e, true)
 
                             } else return;
