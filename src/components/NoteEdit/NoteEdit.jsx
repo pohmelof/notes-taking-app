@@ -5,29 +5,42 @@ import { useEffect, useRef } from 'react'
 
 const NoteEdit = ({note, folders, handleChange, deleteNote, finishEditing}) => {
     const headingEl = useRef(null);
+    const mainTextEl = useRef(null);
     const noteEditEl = useRef(null);
     useEffect(() => headingEl.current.focus(), []);
+
+    // store initial text values in refs for didNoteTextChange
+    const noteHeading = useRef(note.heading);
+    const noteText = useRef(note.mainText);
+    const didNoteTextChange = () => {
+        return noteHeading.current !== headingEl.current.value ||
+               noteText.current !== mainTextEl.current.value;
+    }
 
     const setCursorToEndOnFocus = (e) => {
         e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length)
     };
 
+    const animTime = 200;
     const closeEditWindow = (e, deletion=false) => {
         e.preventDefault();
         noteEditEl.current.classList.add('reverse-animation');
+        // timeout for animation to finish before unmount
         setTimeout(() => {
-            finishEditing(note.id);
+            finishEditing(note.id, didNoteTextChange());
             if(deletion) deleteNote(note.id);
-        }, 200);
+        }, animTime);
     };
 
     return (
         <div ref={noteEditEl}
              className={`note-edit`}
-             onClick={e => closeEditWindow(e)}>
+             style={{animationDuration: `${animTime + 10}ms`}}
+             onClick={(e) => closeEditWindow(e)}>
             <div className='note-edit-container' onClick={e => e.stopPropagation()}>
                 <TextareaAutosize
                     ref={headingEl}
+                    name='heading'
                     onFocus={(e) => {
                         setCursorToEndOnFocus(e)
                     }}
@@ -38,6 +51,8 @@ const NoteEdit = ({note, folders, handleChange, deleteNote, finishEditing}) => {
                 />
                 <TextareaAutosize
                     style={{backgroundColor: note.color, color: note.fontColor}}
+                    ref={mainTextEl}
+                    name='mainText'
                     onFocus={(e) => {
                         setCursorToEndOnFocus(e)
                     }}

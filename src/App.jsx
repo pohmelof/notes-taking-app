@@ -47,8 +47,8 @@ function App() {
   const [folderFilter, setFolderFilter] = useState(null);
   const applyFolderFilter = (notes, folder) => {
     const notesCopy = [...notes];
-    if (folder === null || folder === 'default') {
-      return notesCopy.filter(item => item.folder === null)
+    if (folder === null) {
+      return notes
     } else {
       return notesCopy.filter(item => item.folder === folder)
     }
@@ -106,12 +106,14 @@ function App() {
       editedNoteId: id
     })
   }
-  const finishEditing = (id) => {
+  const finishEditing = (id, didNoteTextChange) => {
     setEdit({
       active: false,
       editedNoteId: null
     })
-    handleChange(Date.now(), id, 'date');
+    if (didNoteTextChange) {
+      handleChange(Date.now(), id, 'date');
+    }
     filterEmptyNotes();
   }
 

@@ -11,12 +11,10 @@
     transition: all 0.4s;
     animation-iteration-count: 1;
     animation-name: noteEditRollout;
-    animation-duration: 0.21s;
 }
 .reverse-animation {
     animation-iteration-count: 1;
     animation-name: noteEditRollIn;
-    animation-duration: 0.21s;
 }
 .note-edit-active {
     transform: scaleY(1);
